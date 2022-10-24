@@ -187,22 +187,7 @@ playlist_def %>%
   pull(track_id) %>%
   playlist_add_tracks(playlist_id = "2vB12PcJkkxxAkgOAueH32", remove_all_current = TRUE, verbose = FALSE)
 
-message("Done!")
-Sys.sleep(3)
-
-
-
-MEGABLEND_hist %>%
-  filter(date == today())
-
-# Restjes
-
-# gini <- scrobbles %>%
-#   anti_join(remove, by = c("artist", "track_title")) %>%
-#   group_by(username) %>%
-#   summarise(gini = DescTools::Gini(scrobbles))
-
-
+# Print today's MEGABLEND to console (CTRL-C + CTRL-V > Whatsapp)
 read_rds("MEGABLEND_hist.rds") %>%
   filter(date == max(date)) %>%
   select(artiest = artist, titel = track_title, scrobbles, aant_personen = n_psn, details = username) %>%
